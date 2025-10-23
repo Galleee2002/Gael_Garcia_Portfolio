@@ -1,0 +1,50 @@
+/**
+ * Tipos comunes utilizados en toda la aplicación
+ */
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  imageUrl?: string;
+  projectUrl?: string;
+  githubUrl?: string;
+  createdAt?: Date;
+}
+
+export interface Skill {
+  id: number;
+  name: string;
+  level: number; // 0-100
+  category: SkillCategory;
+  icon?: string;
+}
+
+export type SkillCategory =
+  | "frontend"
+  | "backend"
+  | "database"
+  | "tools"
+  | "other";
+
+export const SkillCategories = {
+  FRONTEND: "frontend",
+  BACKEND: "backend",
+  DATABASE: "database",
+  TOOLS: "tools",
+  OTHER: "other",
+} as const;
+
+export interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export interface SocialLink {
+  id: number;
+  platform: string;
+  url: string;
+  icon?: string;
+}
