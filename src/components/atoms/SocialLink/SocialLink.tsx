@@ -18,9 +18,9 @@ const SocialLink: React.FC<SocialLinkProps> = ({
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className={`flex items-center justify-between px-4 py-2 text-gray-700 text-sm transition-all duration-300 hover:text-gray-900 ${className}`}
+    className={`group flex items-center justify-between px-3 py-2 text-gray-700 text-sm rounded-md transition-all duration-200 hover:bg-gray-200 hover:bg-opacity-50 hover:text-gray-900 ${className}`}
   >
-    <span>{label}</span>
+    <span className="font-normal">{label}</span>
     <Icon name={platform} size="md" color="#1d1d1d" />
   </a>
 );

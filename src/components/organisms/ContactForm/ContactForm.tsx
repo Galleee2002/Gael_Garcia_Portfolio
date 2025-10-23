@@ -68,20 +68,23 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section
+      id="contact"
+      className="py-12 md:py-16 lg:py-20 bg-gray-50 px-4 md:px-0"
+    >
       <div className="container-custom">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <Text variant="h2" className="mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <Text variant="h2" className="mb-3 md:mb-4 text-3xl md:text-4xl">
               Contáctame
             </Text>
-            <Text variant="p" className="text-xl text-gray-600">
+            <Text variant="p" className="text-base md:text-xl text-gray-600">
               ¿Tienes un proyecto en mente? ¡Hablemos!
             </Text>
           </div>
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-lg shadow-md"
+            className="bg-white p-5 md:p-8 rounded-lg shadow-md"
           >
             <FormField
               label="Nombre"

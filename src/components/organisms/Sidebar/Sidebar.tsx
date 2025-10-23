@@ -7,15 +7,17 @@ import Text from "@atoms/Text";
 interface SidebarProps {
   avatarSrc?: string;
   className?: string;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
 const navigationItems = [
-  { icon: "home" as const, label: "Inicio" },
-  { icon: "experience" as const, label: "Experiencias" },
-  { icon: "projects" as const, label: "Proyectos" },
-  { icon: "about" as const, label: "Sobre mi" },
-  { icon: "contact" as const, label: "Contáctame" },
-  { icon: "tools" as const, label: "Herramientas" },
+  { icon: "home" as const, label: "Inicio", href: "#home" },
+  { icon: "experience" as const, label: "Experiencias", href: "#experience" },
+  { icon: "projects" as const, label: "Proyectos", href: "#projects" },
+  { icon: "about" as const, label: "Sobre mi", href: "#about" },
+  { icon: "contact" as const, label: "Contáctame", href: "#contact" },
+  { icon: "tools" as const, label: "Herramientas", href: "#tools" },
 ];
 
 const socialLinks = [
@@ -25,42 +27,80 @@ const socialLinks = [
   { platform: "github" as const, label: "Github", href: "#" },
 ];
 
-const Sidebar: React.FC<SidebarProps> = ({ avatarSrc, className = "" }) => (
-  <aside
-    className={`fixed left-0 top-0 h-screen w-80 flex flex-col ${className}`}
-    style={{ backgroundColor: "#e5e5e5" }}
-  >
-    <div className="flex justify-center py-8">
-      <Avatar src={avatarSrc} size="xl" />
-    </div>
-    <nav className="flex flex-col gap-2 px-4">
-      {navigationItems.map((item) => (
-        <NavButton
-          key={item.label}
-          icon={item.icon}
-          label={item.label}
-          onClick={() => console.log(`Navegando a ${item.label}`)}
+const Sidebar: React.FC<SidebarProps> = ({
+  avatarSrc,
+  className = "",
+  isOpen = false,
+  onClose,
+}) => {
+  const handleNavigation = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      onClose?.();
+    }
+  };
+
+  return (
+    <>
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+          onClick={onClose}
         />
-      ))}
-    </nav>
-    <div className="mt-auto pb-6">
-      <div className="px-4 mb-2">
-        <Text variant="h5" color="text-gray-800" className="font-semibold">
-          Conectar
-        </Text>
-      </div>
-      <div className="flex flex-col">
-        {socialLinks.map((link) => (
-          <SocialLink
-            key={link.platform}
-            platform={link.platform}
-            label={link.label}
-            href={link.href}
+      )}
+      <aside
+        className={`fixed left-0 top-0 h-screen w-72 sm:w-80 flex flex-col z-40 transition-transform duration-300 shadow-lg ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } lg:translate-x-0 ${className}`}
+        style={{ backgroundColor: "#e5e5e5" }}
+      >
+        {/* Avatar Section */}
+        <div className="flex justify-center pt-8 pb-6 px-4">
+          <Avatar
+            src={avatarSrc}
+            size="lg"
+            className="w-24 h-24 md:w-28 md:h-28"
           />
-        ))}
-      </div>
-    </div>
-  </aside>
-);
+        </div>
+
+        {/* Navigation Section */}
+        <nav className="flex flex-col gap-1.5 px-3 mb-6">
+          {navigationItems.map((item) => (
+            <NavButton
+              key={item.label}
+              icon={item.icon}
+              label={item.label}
+              onClick={() => handleNavigation(item.href)}
+            />
+          ))}
+        </nav>
+
+        {/* Social Links Section */}
+        <div className="mt-auto pb-6 px-3">
+          <div className="mb-3 px-2">
+            <Text
+              variant="h6"
+              color="text-gray-600"
+              className="font-medium text-xs uppercase tracking-wider"
+            >
+              Conectar
+            </Text>
+          </div>
+          <div className="flex flex-col gap-0.5">
+            {socialLinks.map((link) => (
+              <SocialLink
+                key={link.platform}
+                platform={link.platform}
+                label={link.label}
+                href={link.href}
+              />
+            ))}
+          </div>
+        </div>
+      </aside>
+    </>
+  );
+};
 
 export default Sidebar;

@@ -18,13 +18,13 @@ const NavButton: React.FC<NavButtonProps> = ({
 }) => (
   <button
     onClick={onClick}
-    className={`w-full flex items-center gap-3 px-4 py-3 text-white text-left font-medium rounded-[10px] transition-all duration-300 hover:bg-opacity-80 ${
-      isActive ? "bg-opacity-90" : "bg-opacity-100"
+    className={`group w-full flex items-center gap-3 px-3 py-2.5 text-white text-left text-sm font-medium rounded-lg transition-all duration-200 hover:bg-opacity-90 hover:shadow-md hover:scale-[1.02] active:scale-[0.98] ${
+      isActive ? "bg-opacity-95 shadow-md" : "bg-opacity-100"
     } ${className}`}
     style={{ backgroundColor: "#1d1d1d" }}
   >
     <Icon name={icon} size="md" color="white" />
-    <span className="capitalize">{label}</span>
+    <span className="capitalize tracking-wide">{label}</span>
   </button>
 );
 

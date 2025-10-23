@@ -11,7 +11,7 @@ interface ButtonProps {
 }
 
 const baseStyles =
-  "font-normal rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2";
+  "font-normal rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]";
 const variantStyles = {
   primary: "bg-[var(--secondary-color)] text-white focus:ring-gray-500",
   secondary: "bg-[var(--background-menu)] text-black focus:ring-purple-500",
