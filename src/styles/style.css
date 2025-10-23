@@ -1,9 +1,6 @@
-/* Importar fuentes Inter desde Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
-
 @import "tailwindcss";
 
-/* Variables personalizadas */
 :root {
   --primary-color: #7c3aed;
   --secondary-color: #1d1d1d;
@@ -18,7 +15,6 @@
   --text-color: #f1f5f9;
 }
 
-/* Estilos base */
 *,
 *::before,
 *::after {
@@ -35,14 +31,13 @@ body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  font-weight: 400; /* Inter Regular */
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
-/* Tipografía - Títulos y subtítulos con Inter Medium */
 h1,
 h2,
 h3,
@@ -50,15 +45,13 @@ h4,
 h5,
 h6 {
   font-family: "Inter", sans-serif;
-  font-weight: 500; /* Inter Medium */
+  font-weight: 500;
 }
 
-/* Clase utility para texto light */
 .text-light {
-  font-weight: 300; /* Inter Light */
+  font-weight: 300;
 }
 
-/* Utilidades personalizadas */
 .container-custom {
   max-width: 1280px;
   margin: 0 auto;
