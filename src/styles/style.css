@@ -9,7 +9,7 @@
 */
 
 :root {
-  --primary-color: #7c3aed;
+  --primary-color: #374151;
   --secondary-color: #1d1d1d;
   --background-color: #f4f4f4;
   --background-menu: #e5e5e5;
@@ -63,4 +63,21 @@ h6 {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+/* Animación de parpadeo para timeline dots */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
 }

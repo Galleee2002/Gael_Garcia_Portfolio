@@ -3,6 +3,7 @@ import Avatar from "@atoms/Avatar";
 import NavButton from "@atoms/NavButton";
 import SocialLink from "@atoms/SocialLink";
 import Text from "@atoms/Text";
+import TextType from "@atoms/TextType";
 
 interface SidebarProps {
   avatarSrc?: string;
@@ -21,10 +22,26 @@ const navigationItems = [
 ];
 
 const socialLinks = [
-  { platform: "instagram" as const, label: "Instagram", href: "#" },
-  { platform: "whatsapp" as const, label: "WhatsApp", href: "#" },
-  { platform: "linkedin" as const, label: "LinkedIn", href: "#" },
-  { platform: "github" as const, label: "Github", href: "#" },
+  {
+    platform: "instagram" as const,
+    label: "Instagram",
+    href: "https://www.instagram.com/gaell.garciaa/",
+  },
+  {
+    platform: "whatsapp" as const,
+    label: "WhatsApp",
+    href: "https://wa.me/+5401159897869",
+  },
+  {
+    platform: "linkedin" as const,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/gael-garcia-07b486294",
+  },
+  {
+    platform: "github" as const,
+    label: "Github",
+    href: "http://github.com/Galleee2002",
+  },
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -56,12 +73,23 @@ const Sidebar: React.FC<SidebarProps> = ({
         style={{ backgroundColor: "#e5e5e5" }}
       >
         {/* Avatar Section */}
-        <div className="flex justify-center pt-8 pb-6 px-4">
+        <div className="flex flex-col items-center gap-3 pt-8 pb-6 px-4">
           <Avatar
             src={avatarSrc}
             size="lg"
             className="w-24 h-24 md:w-28 md:h-28"
           />
+          <div className="w-full text-center">
+            <TextType
+              text={["Web Developer", "Amazing Interfaces"]}
+              as="p"
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+              className="text-gray-800 font-semibold text-lg"
+            />
+          </div>
         </div>
 
         {/* Navigation Section */}

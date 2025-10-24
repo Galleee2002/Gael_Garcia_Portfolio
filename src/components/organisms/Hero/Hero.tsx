@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = ({
             <Button
               variant="primary"
               size="md"
-              className="sm:text-base md:!px-7 md:!py-3.5 md:!text-lg"
+              className="sm:text-base md:px-7! md:py-3.5! md:text-lg!"
               onClick={() => handleNavigation("#projects")}
             >
               Ver Proyectos
@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({
             <Button
               variant="secondary"
               size="md"
-              className="sm:text-base md:!px-7 md:!py-3.5 md:!text-lg"
+              className="sm:text-base md:px-7! md:py-3.5! md:text-lg!"
               onClick={() => handleNavigation("#contact")}
             >
               Contacto

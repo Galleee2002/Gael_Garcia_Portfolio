@@ -22,15 +22,15 @@ const defaultProjects: Project[] = [
     title: "E-Commerce Platform",
     description:
       "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago y panel de administración.",
-    technologies: ["React", "TypeScript", "Node.js", "MongoDB"],
+    technologies: ["React", "TypeScript", "NextJS", "Supabase"],
     githubUrl: "https://github.com",
   },
   {
     id: 2,
-    title: "Task Manager App",
+    title: "Calculadora",
     description:
       "Aplicación de gestión de tareas con autenticación, notificaciones en tiempo real y colaboración en equipo.",
-    technologies: ["React", "Firebase", "Tailwind CSS"],
+    technologies: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com",
   },
   {
