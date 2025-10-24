@@ -2,7 +2,8 @@ import React from "react";
 import TimelineDot from "@atoms/TimelineDot";
 import TimelineLine from "@atoms/TimelineLine";
 import Text from "@atoms/Text";
-import type { Experience } from "@types/common.types";
+import TechBadge from "@atoms/TechBadge";
+import type { Experience } from "../../../types/common.types";
 
 interface TimelineItemProps {
   experience: Experience;
@@ -80,12 +81,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         {experience.technologies && experience.technologies.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {experience.technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 text-xs md:text-sm bg-gray-100 text-gray-700 rounded-full border border-gray-200 transition-all hover:bg-gray-200"
-              >
-                {tech}
-              </span>
+              <TechBadge key={index} technology={tech} />
             ))}
           </div>
         )}

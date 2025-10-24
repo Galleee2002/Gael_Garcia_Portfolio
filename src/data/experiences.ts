@@ -1,19 +1,15 @@
-import type { Experience } from "@types/common.types";
+import type { Experience } from "../types/common.types";
 
-/**
- * Datos de experiencia profesional
- * Ordenados de más reciente a más antiguo
- */
 export const experiences: Experience[] = [
   {
     id: 1,
-    title: "Desarrollador Full Stack",
-    company: "Tech Solutions Inc.",
+    title: "Desarrollador Frontend",
+    company: "Freelance.",
     period: "2024 - Actualidad",
     location: "Remoto",
     description:
-      "Desarrollo y mantenimiento de aplicaciones web modernas utilizando tecnologías de vanguardia. Liderazgo de proyectos y colaboración con equipos multidisciplinarios para entregar soluciones de alta calidad.",
-    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "AWS"],
+      "Desarrollo de aplicaciones web modernas y responsivas utilizando tecnologías de vanguardia. Creación de proyectos propios como freelance, implementando soluciones escalables y adaptables a cualquier dispositivo, con enfoque en la experiencia de usuario y el rendimiento óptimo.",
+    technologies: ["React", "TypeScript", "NextJS", "Bootstrap", "MariaDB"],
   },
   {
     id: 2,

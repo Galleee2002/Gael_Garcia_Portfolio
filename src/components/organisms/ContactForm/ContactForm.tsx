@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormField from "@molecules/FormField";
+import TextArea from "@atoms/TextArea";
 import Button from "@atoms/Button";
 import Text from "@atoms/Text";
 
@@ -115,7 +116,7 @@ const ContactForm: React.FC = () => {
                   <span className="text-red-500 ml-1">*</span>
                 </Text>
               </label>
-              <textarea
+              <TextArea
                 name="message"
                 id="message"
                 value={formData.message}
@@ -123,12 +124,7 @@ const ContactForm: React.FC = () => {
                 placeholder="Tu mensaje..."
                 required
                 rows={5}
-                className={`
-                  w-full px-4 py-2 border border-gray-300 rounded-lg
-                  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                  transition-all duration-200
-                  ${errors.message ? "border-red-500" : ""}
-                `}
+                error={errors.message}
               />
               {errors.message && (
                 <Text

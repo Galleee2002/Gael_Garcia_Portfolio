@@ -2,6 +2,7 @@ import React from "react";
 import Card from "@molecules/Card";
 import Text from "@atoms/Text";
 import Button from "@atoms/Button";
+import TechBadge from "@atoms/TechBadge";
 
 interface ProjectCardProps {
   title: string;
@@ -41,12 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       <div className="mb-4 flex flex-wrap gap-2">
         {technologies.map((tech, index) => (
-          <span
-            key={index}
-            className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-          >
-            {tech}
-          </span>
+          <TechBadge key={index} technology={tech} />
         ))}
       </div>
       <div className="flex gap-3">

@@ -4,6 +4,7 @@ import NavButton from "@atoms/NavButton";
 import SocialLink from "@atoms/SocialLink";
 import Text from "@atoms/Text";
 import TextType from "@atoms/TextType";
+import { scrollToElement } from "@utils/navigation";
 
 interface SidebarProps {
   avatarSrc?: string;
@@ -50,14 +51,6 @@ const Sidebar: React.FC<SidebarProps> = ({
   isOpen = false,
   onClose,
 }) => {
-  const handleNavigation = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-      onClose?.();
-    }
-  };
-
   return (
     <>
       {isOpen && (
@@ -99,7 +92,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               key={item.label}
               icon={item.icon}
               label={item.label}
-              onClick={() => handleNavigation(item.href)}
+              onClick={() => scrollToElement(item.href, onClose)}
             />
           ))}
         </nav>

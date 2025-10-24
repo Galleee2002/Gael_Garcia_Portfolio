@@ -1,6 +1,7 @@
 import React from "react";
 import Text from "@atoms/Text";
 import Button from "@atoms/Button";
+import { scrollToElement } from "@utils/navigation";
 
 interface HeroProps {
   title?: string;
@@ -13,13 +14,6 @@ const Hero: React.FC<HeroProps> = ({
   subtitle = "Desarrollador Web Full Stack",
   description = "Soy un desarrollador Front-End especializado en crear interfaces modernas, rápidas y responsivas. Trabajo con React, TypeScript y Tailwind CSS para construir experiencias web limpias y eficientes, adaptadas a todo tipo de pantallas y dispositivos. Mi enfoque está en combinar diseño funcional y rendimiento para lograr sitios que no solo se vean bien, sino que también ofrezcan una experiencia fluida al usuario.",
 }) => {
-  const handleNavigation = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <section
       id="home"
@@ -45,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({
               variant="primary"
               size="md"
               className="sm:text-base md:px-7! md:py-3.5! md:text-lg!"
-              onClick={() => handleNavigation("#projects")}
+              onClick={() => scrollToElement("#projects")}
             >
               Ver Proyectos
             </Button>
@@ -53,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({
               variant="secondary"
               size="md"
               className="sm:text-base md:px-7! md:py-3.5! md:text-lg!"
-              onClick={() => handleNavigation("#contact")}
+              onClick={() => scrollToElement("#contact")}
             >
               Contacto
             </Button>
