@@ -39,7 +39,7 @@ const defaultProjects: Project[] = [
     description:
       "Portfolio personal interactivo con animaciones suaves y diseño responsive siguiendo Atomic Design.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Galleee2002/Gael_Garcia_Portfolio.git",
   },
 ];
 

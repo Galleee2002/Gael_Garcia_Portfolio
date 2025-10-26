@@ -5,6 +5,7 @@ import ExperienceSection from "@organisms/ExperienceSection";
 import ProjectsSection from "@organisms/ProjectsSection";
 import ContactForm from "@organisms/ContactForm";
 import PlaceholderSection from "@organisms/PlaceholderSection";
+import SkillsSection from "@organisms/SkillsSection";
 
 const Home: React.FC = () => {
   return (
@@ -23,11 +24,7 @@ const Home: React.FC = () => {
 
       <ContactForm />
 
-      <PlaceholderSection
-        id="tools"
-        title="Herramientas"
-        subtitle="Próximamente: Tecnologías y herramientas que utilizo"
-      />
+      <SkillsSection id="tools" />
     </MainLayout>
   );
 };
