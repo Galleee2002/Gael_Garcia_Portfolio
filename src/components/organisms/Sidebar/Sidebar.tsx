@@ -102,7 +102,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           <div className="mb-3 px-2">
             <Text
               variant="h6"
-              color="text-gray-600"
+              color="var(--secondary-color)"
               className="font-medium text-xs uppercase tracking-wider"
             >
               Conectar

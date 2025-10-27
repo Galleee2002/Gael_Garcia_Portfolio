@@ -3,6 +3,7 @@ import TimelineDot from "@atoms/TimelineDot";
 import TimelineLine from "@atoms/TimelineLine";
 import Text from "@atoms/Text";
 import TechBadge from "@atoms/TechBadge";
+import useScrollReveal from "@hooks/useScrollReveal";
 import type { Experience } from "../../../types/common.types";
 
 interface TimelineItemProps {
@@ -16,8 +17,17 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   isLast = false,
   className = "",
 }) => {
+  const { ref, className: revealClassName } = useScrollReveal<HTMLDivElement>({
+    direction: "left",
+    duration: 700,
+    delay: 0,
+  });
+
   return (
-    <div className={`flex gap-4 md:gap-6 ${className}`}>
+    <div
+      ref={ref}
+      className={`flex gap-4 md:gap-6 ${className} ${revealClassName}`}
+    >
       {/* Columna de la línea temporal (izquierda) */}
       <div className="flex flex-col items-center pt-1">
         <TimelineDot variant="primary" size="md" />

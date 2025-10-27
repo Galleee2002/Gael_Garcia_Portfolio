@@ -3,6 +3,7 @@ import FormField from "@molecules/FormField";
 import TextArea from "@atoms/TextArea";
 import Button from "@atoms/Button";
 import Text from "@atoms/Text";
+import useScrollReveal from "@hooks/useScrollReveal";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,18 @@ const ContactForm: React.FC = () => {
     name: "",
     email: "",
     message: "",
+  });
+
+  const titleReveal = useScrollReveal<HTMLDivElement>({
+    direction: "up",
+    duration: 700,
+    delay: 0,
+  });
+
+  const formReveal = useScrollReveal<HTMLFormElement>({
+    direction: "up",
+    duration: 700,
+    delay: 150,
   });
 
   const handleChange = (
@@ -71,11 +84,14 @@ const ContactForm: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-12 md:py-16 lg:py-20 bg-gray-50 px-4 md:px-0"
+      className="pt-8 md:pt-10 lg:pt-12 pb-12 md:pb-16 lg:pb-20 bg-gray-50 px-4 md:px-0"
     >
       <div className="container-custom">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8 md:mb-12">
+          <div
+            ref={titleReveal.ref}
+            className={`text-center mb-8 md:mb-12 ${titleReveal.className}`}
+          >
             <Text variant="h2" className="mb-3 md:mb-4 text-3xl md:text-4xl">
               Contáctame
             </Text>
@@ -84,8 +100,9 @@ const ContactForm: React.FC = () => {
             </Text>
           </div>
           <form
+            ref={formReveal.ref}
             onSubmit={handleSubmit}
-            className="bg-white p-5 md:p-8 rounded-lg shadow-md"
+            className={`bg-white p-5 md:p-8 rounded-lg shadow-md ${formReveal.className}`}
           >
             <FormField
               label="Nombre"

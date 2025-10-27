@@ -2,6 +2,7 @@ import React from "react";
 import Text from "@atoms/Text";
 import Button from "@atoms/Button";
 import { scrollToElement } from "@utils/navigation";
+import useScrollReveal from "@hooks/useScrollReveal";
 
 interface HeroProps {
   title?: string;
@@ -14,6 +15,27 @@ const Hero: React.FC<HeroProps> = ({
   subtitle = "Desarrollador Web Full Stack",
   description = "Soy un desarrollador Front-End especializado en crear interfaces modernas, rápidas y responsivas. Trabajo con React, TypeScript y Tailwind CSS para construir experiencias web limpias y eficientes, adaptadas a todo tipo de pantallas y dispositivos. Mi enfoque está en combinar diseño funcional y rendimiento para lograr sitios que no solo se vean bien, sino que también ofrezcan una experiencia fluida al usuario.",
 }) => {
+  const titleReveal = useScrollReveal<HTMLHeadingElement>({
+    direction: "up",
+    duration: 700,
+    delay: 0,
+  });
+  const subtitleReveal = useScrollReveal<HTMLDivElement>({
+    direction: "up",
+    duration: 700,
+    delay: 100,
+  });
+  const descriptionReveal = useScrollReveal<HTMLDivElement>({
+    direction: "up",
+    duration: 700,
+    delay: 200,
+  });
+  const buttonsReveal = useScrollReveal<HTMLDivElement>({
+    direction: "up",
+    duration: 700,
+    delay: 300,
+  });
+
   return (
     <section
       id="home"
@@ -21,20 +43,33 @@ const Hero: React.FC<HeroProps> = ({
     >
       <div className="container-custom text-left">
         <div className="max-w-3xl flex flex-col gap-3 md:gap-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+          <h1
+            ref={titleReveal.ref}
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold ${titleReveal.className}`}
+          >
             {title}
           </h1>
-          <Text
-            variant="h2"
-            color="text-gray-500"
-            className="text-2xl sm:text-3xl md:text-4xl"
+          <div ref={subtitleReveal.ref} className={subtitleReveal.className}>
+            <Text
+              variant="h2"
+              color="text-gray-500"
+              className="text-2xl sm:text-3xl md:text-4xl"
+            >
+              {subtitle}
+            </Text>
+          </div>
+          <div
+            ref={descriptionReveal.ref}
+            className={descriptionReveal.className}
           >
-            {subtitle}
-          </Text>
-          <Text variant="p" className="text-sm sm:text-base text-gray-600">
-            {description}
-          </Text>
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-start mt-2">
+            <Text variant="p" className="text-sm sm:text-base text-gray-600">
+              {description}
+            </Text>
+          </div>
+          <div
+            ref={buttonsReveal.ref}
+            className={`flex flex-col sm:flex-row gap-3 md:gap-4 justify-start mt-2 ${buttonsReveal.className}`}
+          >
             <Button
               variant="primary"
               size="md"

@@ -13,22 +13,22 @@ export const experiences: Experience[] = [
   },
   {
     id: 2,
-    title: "Desarrollador Frontend",
-    company: "Digital Agency",
+    title: "Diseñador y Maquetador Web",
+    company: "Chuno Studio",
     period: "2023 - 2024",
-    location: "Madrid, España",
+    location: "Ciudad Autónoma de Buenos Aires, Argentina",
     description:
-      "Creación de interfaces de usuario responsivas y accesibles. Implementación de mejores prácticas de UX/UI y optimización del rendimiento de aplicaciones web.",
-    technologies: ["React", "JavaScript", "Tailwind CSS", "Redux", "Git"],
+      "Encargado del prototipado de interfaces en Figma y su posterior maquetado con HTML, CSS y JavaScript. Colaboración con el equipo de desarrollo y diseño para transformar conceptos visuales en experiencias funcionales, accesibles y bien estructuradas.",
+    technologies: ["Figma", "HTML", "CSS", "JavaScript", "Git"],
   },
   {
     id: 3,
-    title: "Desarrollador Junior",
-    company: "StartUp Innovadora",
+    title: "Trainee Frontend Developer",
+    company: "GAO Tek Inc. ",
     period: "2023 - 2023",
-    location: "Barcelona, España",
+    location: "Ciudad Autónoma de Buenos Aires, Argentina",
     description:
-      "Inicio en el desarrollo web profesional, participando en el desarrollo de MVP y prototipos. Aprendizaje continuo de nuevas tecnologías y metodologías ágiles.",
+      "Etapa de formación inicial en desarrollo frontend, participando en tareas de soporte y pequeños módulos de proyectos reales. Aprendizaje de metodologías ágiles, buenas prácticas de código y fundamentos del diseño de interfaces web.",
     technologies: ["HTML", "CSS", "JavaScript", "React", "Firebase"],
   },
 ];

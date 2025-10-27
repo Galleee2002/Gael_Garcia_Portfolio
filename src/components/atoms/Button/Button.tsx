@@ -11,11 +11,11 @@ interface ButtonProps {
 }
 
 const baseStyles =
-  "font-normal rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]";
+  "font-normal rounded-lg transition-all duration-200 focus:outline-none hover:shadow-md hover:scale-[1.02] active:scale-[0.98]";
 const variantStyles = {
-  primary: "bg-[var(--secondary-color)] text-white ",
-  secondary: "bg-[var(--background-color)] text-black ",
-  outline: "",
+  primary: "text-white",
+  secondary: "bg-[var(--background-color)] text-black",
+  outline: "border border-gray-300 text-gray-700 hover:bg-gray-50",
 };
 const sizeStyles = {
   sm: "px-3 py-1.5 text-sm",
@@ -31,17 +31,27 @@ const Button: React.FC<ButtonProps> = ({
   type = "button",
   disabled = false,
   className = "",
-}) => (
-  <button
-    type={type}
-    onClick={onClick}
-    disabled={disabled}
-    className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${
-      disabled ? "opacity-50 cursor-not-allowed" : ""
-    } ${className}`}
-  >
-    {children}
-  </button>
-);
+}) => {
+  const getBackgroundStyle = () => {
+    if (variant === "primary") {
+      return { backgroundColor: "#2a64f5" };
+    }
+    return {};
+  };
+
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      style={getBackgroundStyle()}
+      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${
+        disabled ? "opacity-50 cursor-not-allowed" : ""
+      } ${className}`}
+    >
+      {children}
+    </button>
+  );
+};
 
 export default Button;
