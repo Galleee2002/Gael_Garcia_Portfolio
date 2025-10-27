@@ -14,10 +14,10 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       className={`
-        bg-white rounded-lg shadow-md p-6
+        bg-white rounded-lg shadow-lg p-6
         ${
           hover
-            ? "transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+            ? "transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             : ""
         }
         ${className}

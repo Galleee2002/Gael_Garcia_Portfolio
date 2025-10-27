@@ -23,6 +23,7 @@ const defaultProjects: Project[] = [
     description:
       "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago y panel de administración.",
     technologies: ["React", "TypeScript", "NextJS", "Supabase"],
+    imageUrl: "/src/assets/images/ecommerce-project.png",
     githubUrl: "https://github.com",
   },
   {
@@ -31,6 +32,7 @@ const defaultProjects: Project[] = [
     description:
       "Aplicación de gestión de tareas con autenticación, notificaciones en tiempo real y colaboración en equipo.",
     technologies: ["HTML", "CSS", "JavaScript"],
+    imageUrl: "/path/to/project-image.jpg",
     githubUrl: "https://github.com",
   },
   {
@@ -39,6 +41,7 @@ const defaultProjects: Project[] = [
     description:
       "Portfolio personal interactivo con animaciones suaves y diseño responsive siguiendo Atomic Design.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    imageUrl: "/src/assets/images/portfolio-project.png",
     githubUrl: "https://github.com/Galleee2002/Gael_Garcia_Portfolio.git",
   },
 ];

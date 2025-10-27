@@ -23,28 +23,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Card hover className="flex flex-col h-full">
+      {/* Título del proyecto */}
+      <Text variant="h3" className="mb-4">
+        {title}
+      </Text>
+
+      {/* Imagen preview del proyecto */}
       {imageUrl && (
-        <div className="mb-4 overflow-hidden rounded-lg">
+        <div className="mb-4 -mx-6 overflow-hidden">
           <img
             src={imageUrl}
-            alt={title}
-            className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+            alt={`Preview de ${title}`}
+            className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
           />
         </div>
       )}
-      <Text variant="h3" className="mb-2">
-        {title}
-      </Text>
+
+      {/* Descripción del proyecto */}
       <div className="grow mb-4">
         <Text variant="p" className="text-gray-600">
           {description}
         </Text>
       </div>
+
+      {/* Tecnologías utilizadas */}
       <div className="mb-4 flex flex-wrap gap-2">
         {technologies.map((tech, index) => (
           <TechBadge key={index} technology={tech} />
         ))}
       </div>
+
+      {/* Links a proyecto y GitHub */}
       <div className="flex gap-3">
         {projectUrl && (
           <Button
