@@ -173,7 +173,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         </nav>
 
         {/* Social Links Section */}
-        <div className="mt-auto pb-3 px-6 md:pb-4 lg:pb-5 flex-shrink-0">
+        <div className="mt-auto pb-8 px-6 md:pb-4 lg:pb-5 flex-shrink-0">
           <div className="mb-1.5 md:mb-2">
             <Text
               variant="h6"
