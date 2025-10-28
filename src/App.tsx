@@ -4,9 +4,27 @@ import Sidebar from "@organisms/Sidebar";
 import DotGrid from "@atoms/DotGrid";
 import MenuIcon from "@atoms/MenuIcon";
 import perfilImage from "@assets/images/perfil.webp";
+import { useWindowSize } from "@hooks/useWindowSize";
+import useSwipeGesture from "@hooks/useSwipeGesture";
 
 const App: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { width } = useWindowSize();
+
+  // Solo habilitar swipe gesture en móviles (< 1024px)
+  const isMobile = width < 1024;
+
+  // Detectar swipe desde el borde izquierdo para abrir el sidebar
+  useSwipeGesture({
+    onSwipeRight: () => {
+      if (isMobile && !isSidebarOpen) {
+        setIsSidebarOpen(true);
+      }
+    },
+    edgeThreshold: 30,
+    minSwipeDistance: 50,
+    enabled: isMobile,
+  });
 
   return (
     <div className="min-h-screen bg-gray-200 relative">

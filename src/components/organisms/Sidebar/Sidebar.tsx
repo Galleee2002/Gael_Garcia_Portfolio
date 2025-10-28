@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Avatar from "@atoms/Avatar";
 import NavButton from "@atoms/NavButton";
 import SocialLink from "@atoms/SocialLink";
@@ -51,6 +51,9 @@ const Sidebar: React.FC<SidebarProps> = ({
   isOpen = false,
   onClose,
 }) => {
+  const sidebarRef = useRef<HTMLElement>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+
   // Prevenir scroll del body cuando el sidebar está abierto
   useEffect(() => {
     if (isOpen) {
@@ -82,6 +85,46 @@ const Sidebar: React.FC<SidebarProps> = ({
       document.body.style.width = "";
     };
   }, [isOpen]);
+
+  // Detectar swipe hacia la izquierda para cerrar el sidebar en móvil
+  useEffect(() => {
+    if (!isOpen || !sidebarRef.current) return;
+
+    const handleTouchStart = (e: TouchEvent): void => {
+      const touch = e.touches[0];
+      touchStartRef.current = {
+        x: touch.clientX,
+        y: touch.clientY,
+      };
+    };
+
+    const handleTouchEnd = (e: TouchEvent): void => {
+      if (!touchStartRef.current) return;
+
+      const touch = e.changedTouches[0];
+      const deltaX = touch.clientX - touchStartRef.current.x;
+      const deltaY = touch.clientY - touchStartRef.current.y;
+
+      // Verificar que el movimiento sea principalmente horizontal
+      const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+
+      // Verificar que sea un swipe hacia la izquierda con suficiente distancia
+      if (isHorizontalSwipe && deltaX < -50 && onClose) {
+        onClose();
+      }
+
+      touchStartRef.current = null;
+    };
+
+    const sidebar = sidebarRef.current;
+    sidebar.addEventListener("touchstart", handleTouchStart, { passive: true });
+    sidebar.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    return () => {
+      sidebar.removeEventListener("touchstart", handleTouchStart);
+      sidebar.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [isOpen, onClose]);
   return (
     <>
       {isOpen && (
@@ -91,6 +134,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         />
       )}
       <aside
+        ref={sidebarRef}
         className={`fixed left-0 top-0 h-screen w-72 sm:w-80 flex flex-col z-40 transition-transform duration-300 shadow-lg ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 ${className}`}
