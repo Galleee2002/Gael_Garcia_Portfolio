@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     id: 1,
     title: "Desarrollador Frontend",
-    company: "Freelance.",
+    company: "Freelance",
     period: "2024 - Actualidad",
     location: "Remoto",
     description:
@@ -24,11 +24,11 @@ export const experiences: Experience[] = [
   {
     id: 3,
     title: "Trainee Frontend Developer",
-    company: "GAO Tek Inc. ",
+    company: "Recodme ",
     period: "2023 - 2023",
     location: "Ciudad Autónoma de Buenos Aires, Argentina",
     description:
       "Etapa de formación inicial en desarrollo frontend, participando en tareas de soporte y pequeños módulos de proyectos reales. Aprendizaje de metodologías ágiles, buenas prácticas de código y fundamentos del diseño de interfaces web.",
-    technologies: ["HTML", "CSS", "JavaScript", "React", "Firebase"],
+    technologies: ["HTML", "CSS", "JavaScript", "React", "MySQL"],
   },
 ];

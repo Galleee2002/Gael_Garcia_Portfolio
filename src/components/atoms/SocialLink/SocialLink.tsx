@@ -25,7 +25,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className={`group flex items-center justify-between px-3 py-2 text-sm rounded-md ${className}`}
+    className={`group flex items-center justify-between px-3 py-1.5 md:py-2 text-sm rounded-md ${className}`}
   >
     <span
       className="font-normal relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-[#2a64f5] after:transition-all after:duration-300 hover:after:w-full"

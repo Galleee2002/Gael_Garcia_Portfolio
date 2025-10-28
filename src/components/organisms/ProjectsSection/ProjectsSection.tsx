@@ -1,50 +1,12 @@
 import React from "react";
-import Text from "@atoms/Text";
 import ProjectCard from "@molecules/ProjectCard";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  imageUrl?: string;
-  projectUrl?: string;
-  githubUrl?: string;
-}
+import SectionHeader from "@molecules/SectionHeader";
+import { projects as defaultProjects } from "@data/projects";
+import type { Project } from "../../../types/common.types";
 
 interface ProjectsSectionProps {
   projects?: Project[];
 }
-
-const defaultProjects: Project[] = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    description:
-      "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago y panel de administración.",
-    technologies: ["React", "TypeScript", "NextJS", "Supabase"],
-    imageUrl: "/src/assets/images/ecommerce-project.png",
-    githubUrl: "https://github.com",
-  },
-  {
-    id: 2,
-    title: "Calculadora",
-    description:
-      "Aplicación de gestión de tareas con autenticación, notificaciones en tiempo real y colaboración en equipo.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "/path/to/project-image.jpg",
-    githubUrl: "https://github.com",
-  },
-  {
-    id: 3,
-    title: "Portfolio Personal",
-    description:
-      "Portfolio personal interactivo con animaciones suaves y diseño responsive siguiendo Atomic Design.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    imageUrl: "/src/assets/images/portfolio-project.png",
-    githubUrl: "https://github.com/Galleee2002/Gael_Garcia_Portfolio.git",
-  },
-];
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   projects = defaultProjects,
@@ -55,18 +17,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       className="py-12 md:py-16 lg:py-20 bg-white px-4 md:px-0"
     >
       <div className="container-custom">
-        <div className="text-center mb-8 md:mb-12">
-          <Text variant="h2" className="mb-3 md:mb-4 text-3xl md:text-4xl">
-            Mis Proyectos
-          </Text>
-          <Text
-            variant="p"
-            className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto px-4"
-          >
-            Estos son algunos de los proyectos en los que he trabajado
-            recientemente.
-          </Text>
-        </div>
+        <SectionHeader
+          title="Mis Proyectos"
+          description="Estos son algunos de los proyectos en los que he trabajado recientemente."
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {projects.map((project) => (
             <ProjectCard

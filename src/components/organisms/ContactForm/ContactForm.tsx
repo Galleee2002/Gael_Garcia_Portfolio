@@ -4,19 +4,27 @@ import TextArea from "@atoms/TextArea";
 import Button from "@atoms/Button";
 import Text from "@atoms/Text";
 import useScrollReveal from "@hooks/useScrollReveal";
+import { sendEmail } from "@/services/emailService";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
   const [errors, setErrors] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null
+  );
 
   const titleReveal = useScrollReveal<HTMLDivElement>({
     direction: "up",
@@ -45,6 +53,7 @@ const ContactForm: React.FC = () => {
     const newErrors = {
       name: "",
       email: "",
+      subject: "",
       message: "",
     };
     let isValid = true;
@@ -62,6 +71,11 @@ const ContactForm: React.FC = () => {
       isValid = false;
     }
 
+    if (!formData.subject.trim()) {
+      newErrors.subject = "El asunto es requerido";
+      isValid = false;
+    }
+
     if (!formData.message.trim()) {
       newErrors.message = "El mensaje es requerido";
       isValid = false;
@@ -71,13 +85,21 @@ const ContactForm: React.FC = () => {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("Form submitted:", formData);
-      // Aquí iría la lógica para enviar el formulario
-      alert("¡Mensaje enviado con éxito!");
-      setFormData({ name: "", email: "", message: "" });
+      setIsSubmitting(true);
+      setSubmitStatus(null);
+
+      try {
+        await sendEmail(formData);
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } catch (error) {
+        setSubmitStatus("error");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -126,6 +148,17 @@ const ContactForm: React.FC = () => {
               required
               error={errors.email}
             />
+            <FormField
+              label="Asunto"
+              type="text"
+              name="subject"
+              id="subject"
+              value={formData.subject}
+              onChange={handleChange as any}
+              placeholder="Asunto del mensaje"
+              required
+              error={errors.subject}
+            />
             <div className="mb-4">
               <label htmlFor="message" className="block mb-2">
                 <Text variant="span" className="font-medium text-gray-700">
@@ -152,13 +185,28 @@ const ContactForm: React.FC = () => {
                 </Text>
               )}
             </div>
+            {submitStatus === "success" && (
+              <div className="mb-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                <Text variant="p" className="text-sm">
+                  ¡Mensaje enviado con éxito! Te responderé pronto.
+                </Text>
+              </div>
+            )}
+            {submitStatus === "error" && (
+              <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg">
+                <Text variant="p" className="text-sm">
+                  Error al enviar el mensaje. Por favor, intenta de nuevo.
+                </Text>
+              </div>
+            )}
             <Button
               type="submit"
               variant="primary"
               size="lg"
               className="w-full"
+              disabled={isSubmitting}
             >
-              Enviar Mensaje
+              {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
             </Button>
           </form>
         </div>

@@ -10,29 +10,27 @@ interface HeroProps {
   description?: string;
 }
 
+const revealConfig = { direction: "up" as const, duration: 700 };
+
 const Hero: React.FC<HeroProps> = ({
   title = "¡Hola! Soy Gael Garcia",
-  subtitle = "Desarrollador Web Full Stack",
+  subtitle = "Desarrollador Web Frontend",
   description = "Soy un desarrollador Front-End especializado en crear interfaces modernas, rápidas y responsivas. Trabajo con React, TypeScript y Tailwind CSS para construir experiencias web limpias y eficientes, adaptadas a todo tipo de pantallas y dispositivos. Mi enfoque está en combinar diseño funcional y rendimiento para lograr sitios que no solo se vean bien, sino que también ofrezcan una experiencia fluida al usuario.",
 }) => {
   const titleReveal = useScrollReveal<HTMLHeadingElement>({
-    direction: "up",
-    duration: 700,
+    ...revealConfig,
     delay: 0,
   });
   const subtitleReveal = useScrollReveal<HTMLDivElement>({
-    direction: "up",
-    duration: 700,
+    ...revealConfig,
     delay: 100,
   });
   const descriptionReveal = useScrollReveal<HTMLDivElement>({
-    direction: "up",
-    duration: 700,
+    ...revealConfig,
     delay: 200,
   });
   const buttonsReveal = useScrollReveal<HTMLDivElement>({
-    direction: "up",
-    duration: 700,
+    ...revealConfig,
     delay: 300,
   });
 

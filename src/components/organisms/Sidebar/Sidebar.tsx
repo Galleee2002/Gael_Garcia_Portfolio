@@ -66,11 +66,11 @@ const Sidebar: React.FC<SidebarProps> = ({
         style={{ backgroundColor: "#e5e5e5" }}
       >
         {/* Avatar Section */}
-        <div className="flex flex-col items-center gap-3 pt-8 pb-6 px-4">
+        <div className="flex flex-col items-center gap-1.5 pt-4 pb-3 px-4 md:gap-2 lg:gap-3 lg:pt-6 lg:pb-5 flex-shrink-0">
           <Avatar
             src={avatarSrc}
             size="lg"
-            className="w-24 h-24 md:w-28 md:h-28"
+            className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
           />
           <div className="w-full text-center">
             <TextType
@@ -80,13 +80,13 @@ const Sidebar: React.FC<SidebarProps> = ({
               pauseDuration={1500}
               showCursor={true}
               cursorCharacter="|"
-              className="text-gray-800 font-semibold text-lg"
+              className="text-gray-800 font-semibold text-sm md:text-base lg:text-lg"
             />
           </div>
         </div>
 
         {/* Navigation Section */}
-        <nav className="flex flex-col gap-1.5 px-3 mb-6">
+        <nav className="flex flex-col gap-1 px-3 mb-3 md:gap-1.5 lg:mb-4 flex-shrink-0">
           {navigationItems.map((item) => (
             <NavButton
               key={item.label}
@@ -98,8 +98,8 @@ const Sidebar: React.FC<SidebarProps> = ({
         </nav>
 
         {/* Social Links Section */}
-        <div className="mt-auto pb-6 px-3">
-          <div className="mb-3 px-2">
+        <div className="mt-auto pb-3 px-3 md:pb-4 lg:pb-5 flex-shrink-0">
+          <div className="mb-1.5 px-2 md:mb-2">
             <Text
               variant="h6"
               color="var(--secondary-color)"
