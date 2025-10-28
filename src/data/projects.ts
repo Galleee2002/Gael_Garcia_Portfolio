@@ -11,7 +11,7 @@ export const projects: Project[] = [
       "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago y panel de administración.",
     technologies: ["React", "TypeScript", "NextJS", "Supabase"],
     imageUrl: ecommerceImage,
-    demoUrl: "https://tu-proyecto-ecommerce.vercel.app",
+    demoUrl: "https://fueradecontexto.vercel.app/",
     githubUrl: "https://github.com/DevDavidg/fueradecontexto.git",
   },
   {
