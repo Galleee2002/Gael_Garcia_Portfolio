@@ -63,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-col gap-2">
           {projectUrl && (
             <Button
               variant="primary"
@@ -73,24 +73,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               Ver Proyecto
             </Button>
           )}
-          {demoUrl && (
-            <Button
-              variant="primary"
-              size="sm"
-              onClick={() => window.open(demoUrl, "_blank")}
-            >
-              Demo
-            </Button>
-          )}
-          {githubUrl && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => window.open(githubUrl, "_blank")}
-            >
-              GitHub
-            </Button>
-          )}
+          <div className="flex gap-3 px-2">
+            {demoUrl && (
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => window.open(demoUrl, "_blank")}
+                className="flex-1"
+              >
+                Demo
+              </Button>
+            )}
+            {githubUrl && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => window.open(githubUrl, "_blank")}
+                className="flex-1"
+              >
+                GitHub
+              </Button>
+            )}
+          </div>
         </div>
       </Card>
     </div>

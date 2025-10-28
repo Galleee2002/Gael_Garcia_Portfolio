@@ -47,22 +47,24 @@ const Hero: React.FC<HeroProps> = ({
           >
             {title}
           </h1>
-          <div ref={subtitleReveal.ref} className={subtitleReveal.className}>
-            <Text
-              variant="h2"
-              color="text-gray-500"
-              className="text-2xl sm:text-3xl md:text-4xl"
+          <div className="bg-white/5 backdrop-blur-[2px] rounded-lg p-4 md:p-6">
+            <div ref={subtitleReveal.ref} className={subtitleReveal.className}>
+              <Text
+                variant="h2"
+                color="text-gray-500"
+                className="text-2xl sm:text-3xl md:text-4xl"
+              >
+                {subtitle}
+              </Text>
+            </div>
+            <div
+              ref={descriptionReveal.ref}
+              className={`${descriptionReveal.className} mt-3 md:mt-4`}
             >
-              {subtitle}
-            </Text>
-          </div>
-          <div
-            ref={descriptionReveal.ref}
-            className={descriptionReveal.className}
-          >
-            <Text variant="p" className="text-sm sm:text-base text-gray-600">
-              {description}
-            </Text>
+              <Text variant="p" className="text-sm sm:text-base text-gray-600">
+                {description}
+              </Text>
+            </div>
           </div>
           <div
             ref={buttonsReveal.ref}

@@ -14,14 +14,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   return (
     <section
       id="projects"
-      className="py-12 md:py-16 lg:py-20 bg-white px-4 md:px-0"
+      className="py-12 md:py-16 lg:py-20 bg-white px-6 md:px-8 lg:px-12"
     >
       <div className="container-custom">
         <SectionHeader
           title="Mis Proyectos"
           description="Estos son algunos de los proyectos en los que he trabajado recientemente."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}

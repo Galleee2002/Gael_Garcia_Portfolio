@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Avatar from "@atoms/Avatar";
 import NavButton from "@atoms/NavButton";
 import SocialLink from "@atoms/SocialLink";
@@ -51,6 +51,37 @@ const Sidebar: React.FC<SidebarProps> = ({
   isOpen = false,
   onClose,
 }) => {
+  // Prevenir scroll del body cuando el sidebar está abierto
+  useEffect(() => {
+    if (isOpen) {
+      // Guardar la posición actual del scroll
+      const scrollY = window.scrollY;
+
+      // Aplicar estilos para prevenir scroll
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+    } else {
+      // Restaurar scroll cuando se cierra el sidebar
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+
+      // Restaurar la posición del scroll
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    }
+
+    // Cleanup al desmontar el componente
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+    };
+  }, [isOpen]);
   return (
     <>
       {isOpen && (
@@ -86,7 +117,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* Navigation Section */}
-        <nav className="flex flex-col gap-1 px-3 mb-3 md:gap-1.5 lg:mb-4 flex-shrink-0">
+        <nav className="flex flex-col gap-1 px-6 mb-3 md:gap-1.5 lg:mb-4 flex-shrink-0">
           {navigationItems.map((item) => (
             <NavButton
               key={item.label}
@@ -98,8 +129,8 @@ const Sidebar: React.FC<SidebarProps> = ({
         </nav>
 
         {/* Social Links Section */}
-        <div className="mt-auto pb-3 px-3 md:pb-4 lg:pb-5 flex-shrink-0">
-          <div className="mb-1.5 px-2 md:mb-2">
+        <div className="mt-auto pb-3 px-6 md:pb-4 lg:pb-5 flex-shrink-0">
+          <div className="mb-1.5 md:mb-2">
             <Text
               variant="h6"
               color="var(--secondary-color)"

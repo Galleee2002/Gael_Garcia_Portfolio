@@ -27,7 +27,7 @@ const PlaceholderSection: React.FC<PlaceholderSectionProps> = ({
   return (
     <section
       id={id}
-      className={`py-12 md:py-16 lg:py-20 ${bgColor} px-4 md:px-0 ${className}`}
+      className={`py-12 md:py-16 lg:py-20 ${bgColor} px-6 md:px-8 lg:px-12 ${className}`}
     >
       <div
         ref={ref}

@@ -15,8 +15,11 @@ import type { LogoItem } from "@organisms/LogoLoop";
 export const techLogos: LogoItem[] = [
   {
     node: (
-      <span style={{ color: "#61DAFB" }}>
+      <span className="flex items-center gap-2" style={{ color: "#61DAFB" }}>
         <SiReact />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          React
+        </span>
       </span>
     ),
     title: "React",
@@ -25,8 +28,11 @@ export const techLogos: LogoItem[] = [
   },
   {
     node: (
-      <span style={{ color: "#E34F26" }}>
+      <span className="flex items-center gap-2" style={{ color: "#E34F26" }}>
         <SiHtml5 />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          HTML5
+        </span>
       </span>
     ),
     title: "HTML5",
@@ -35,8 +41,11 @@ export const techLogos: LogoItem[] = [
   },
   {
     node: (
-      <span style={{ color: "#F7DF1E" }}>
+      <span className="flex items-center gap-2" style={{ color: "#F7DF1E" }}>
         <SiJavascript />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          JavaScript
+        </span>
       </span>
     ),
     title: "JavaScript",
@@ -45,8 +54,11 @@ export const techLogos: LogoItem[] = [
   },
   {
     node: (
-      <span style={{ color: "#1572B6" }}>
+      <span className="flex items-center gap-2" style={{ color: "#1572B6" }}>
         <SiCss3 />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          CSS3
+        </span>
       </span>
     ),
     title: "CSS3",
@@ -55,8 +67,11 @@ export const techLogos: LogoItem[] = [
   },
   {
     node: (
-      <span style={{ color: "#06B6D4" }}>
+      <span className="flex items-center gap-2" style={{ color: "#06B6D4" }}>
         <SiTailwindcss />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          Tailwind CSS
+        </span>
       </span>
     ),
     title: "Tailwind CSS",
@@ -65,8 +80,11 @@ export const techLogos: LogoItem[] = [
   },
   {
     node: (
-      <span style={{ color: "#7952B3" }}>
+      <span className="flex items-center gap-2" style={{ color: "#7952B3" }}>
         <SiBootstrap />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          Bootstrap
+        </span>
       </span>
     ),
     title: "Bootstrap",
@@ -75,8 +93,11 @@ export const techLogos: LogoItem[] = [
   },
   {
     node: (
-      <span style={{ color: "#000000" }}>
+      <span className="flex items-center gap-2" style={{ color: "#000000" }}>
         <SiNextdotjs />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          Next.js
+        </span>
       </span>
     ),
     title: "Next.js",
@@ -85,8 +106,11 @@ export const techLogos: LogoItem[] = [
   },
   {
     node: (
-      <span style={{ color: "#3178C6" }}>
+      <span className="flex items-center gap-2" style={{ color: "#3178C6" }}>
         <SiTypescript />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          TypeScript
+        </span>
       </span>
     ),
     title: "TypeScript",
@@ -95,8 +119,11 @@ export const techLogos: LogoItem[] = [
   },
   {
     node: (
-      <span style={{ color: "#10A37F" }}>
+      <span className="flex items-center gap-2" style={{ color: "#10A37F" }}>
         <SiOpenai />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          ChatGPT
+        </span>
       </span>
     ),
     title: "ChatGPT",
@@ -105,8 +132,11 @@ export const techLogos: LogoItem[] = [
   },
   {
     node: (
-      <span style={{ color: "#8E75B2" }}>
+      <span className="flex items-center gap-2" style={{ color: "#8E75B2" }}>
         <SiGooglegemini />
+        <span className="text-sm md:text-base font-medium text-gray-700 whitespace-nowrap">
+          Gemini
+        </span>
       </span>
     ),
     title: "Gemini",

@@ -11,9 +11,9 @@ interface SkillsSectionProps {
 
 const logoLoopProps = {
   logos: techLogos,
-  speed: 120,
+  speed: 100,
   logoHeight: 48,
-  gap: 40,
+  gap: 56,
   pauseOnHover: true,
   scaleOnHover: true,
   fadeOut: true,
@@ -21,7 +21,7 @@ const logoLoopProps = {
 };
 
 const logoRowStyle = {
-  height: "64px",
+  height: "72px",
   position: "relative" as const,
   overflow: "hidden" as const,
 };
@@ -45,7 +45,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
   return (
     <section
       id={id}
-      className={`pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10 lg:pb-12 bg-white px-4 md:px-0 ${className}`}
+      className={`pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10 lg:pb-12 bg-white px-6 md:px-8 lg:px-12 ${className}`}
     >
       <div className="container-custom">
         <div ref={titleReveal.ref} className={titleReveal.className}>
