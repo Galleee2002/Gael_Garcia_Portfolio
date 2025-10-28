@@ -3,6 +3,7 @@ import Home from "@pages/Home";
 import Sidebar from "@organisms/Sidebar";
 import DotGrid from "@atoms/DotGrid";
 import MenuIcon from "@atoms/MenuIcon";
+import perfilImage from "@assets/images/perfil.webp";
 
 const App: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -35,7 +36,7 @@ const App: React.FC = () => {
 
       {/* Sidebar */}
       <Sidebar
-        avatarSrc="/src/assets/images/perfil.webp"
+        avatarSrc={perfilImage}
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
       />

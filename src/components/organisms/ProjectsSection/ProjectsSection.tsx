@@ -30,6 +30,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               technologies={project.technologies}
               imageUrl={project.imageUrl}
               projectUrl={project.projectUrl}
+              demoUrl={project.demoUrl}
               githubUrl={project.githubUrl}
             />
           ))}

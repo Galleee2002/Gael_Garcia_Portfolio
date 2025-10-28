@@ -11,6 +11,7 @@ interface ProjectCardProps {
   technologies: string[];
   imageUrl?: string;
   projectUrl?: string;
+  demoUrl?: string;
   githubUrl?: string;
 }
 
@@ -20,6 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
   imageUrl,
   projectUrl,
+  demoUrl,
   githubUrl,
 }) => {
   const { ref, className } = useScrollReveal<HTMLDivElement>({
@@ -61,8 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
 
-        {/* Links a proyecto y GitHub */}
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-2">
           {projectUrl && (
             <Button
               variant="primary"
@@ -70,6 +71,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               onClick={() => window.open(projectUrl, "_blank")}
             >
               Ver Proyecto
+            </Button>
+          )}
+          {demoUrl && (
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => window.open(demoUrl, "_blank")}
+            >
+              Demo
             </Button>
           )}
           {githubUrl && (

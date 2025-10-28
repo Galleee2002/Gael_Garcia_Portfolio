@@ -9,6 +9,7 @@ export interface Project {
   technologies: string[];
   imageUrl?: string;
   projectUrl?: string;
+  demoUrl?: string;
   githubUrl?: string;
   createdAt?: Date;
 }
