@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "Calculadora funcional con diseño moderno y responsivo. Implementa toda la lógica de operaciones matemáticas usando JavaScript vanilla, con interfaz adaptable a cualquier dispositivo.",
     technologies: ["HTML", "CSS", "JavaScript"],
     imageUrl: calculadoraImage,
-    demoUrl: "https://tu-calculadora.vercel.app",
+    demoUrl: "https://calculator-project-css-html-js.vercel.app/",
     githubUrl:
       "https://github.com/Galleee2002/Calculator_Project_CSS_HTML_JS.git",
   },
@@ -32,7 +32,7 @@ export const projects: Project[] = [
       "Portfolio personal interactivo con animaciones suaves y diseño responsive siguiendo Atomic Design.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     imageUrl: portfolioImage,
-    demoUrl: "https://tu-portfolio.vercel.app",
+    demoUrl: "https://gael-garcia-portfolio.vercel.app/",
     githubUrl: "https://github.com/Galleee2002/Gael_Garcia_Portfolio.git",
   },
 ];
