@@ -9,6 +9,7 @@
 */
 
 :root {
+  color-scheme: light;
   --primary-color: #374151;
   --secondary-color: #1d1d1d;
   --background-color: #f4f4f4;
@@ -17,15 +18,11 @@
   --secondary-text-color: #adadad;
 }
 
-.dark {
-  --background-color: #0f172a;
-  --text-color: #f1f5f9;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  color-scheme: light;
 }
 
 html {

@@ -12,7 +12,7 @@ const platformColors = {
   instagram: "#E4405F",
   whatsapp: "#25D366",
   linkedin: "#0A66C2",
-  github: "#1d1d1d",
+  github: "#000000",
 };
 
 const SocialLink: React.FC<SocialLinkProps> = ({
@@ -35,12 +35,12 @@ const SocialLink: React.FC<SocialLinkProps> = ({
     </span>
     <span
       className="transition-colors duration-300"
-      style={{ color: "#1d1d1d" }}
+      style={{ color: "#000000" }}
       onMouseEnter={(e) => {
         e.currentTarget.style.color = platformColors[platform];
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.color = "#1d1d1d";
+        e.currentTarget.style.color = "#000000";
       }}
     >
       <Icon name={platform} size="md" color="currentColor" />

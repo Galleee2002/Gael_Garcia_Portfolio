@@ -40,8 +40,8 @@ const socialLinks = [
   },
   {
     platform: "github" as const,
-    label: "Github",
-    href: "http://github.com/Galleee2002",
+    label: "GitHub",
+    href: "https://github.com/Galleee2002",
   },
 ];
 
