@@ -36,6 +36,16 @@ export const techColors = {
 } as const;
 
 /**
+ * Colores de redes sociales para hover
+ */
+export const socialColors = {
+  instagram: "#E4405F",
+  whatsapp: "#25D366",
+  linkedin: "#0A66C2",
+  github: "#000000",
+} as const;
+
+/**
  * Exportación por defecto para acceso rápido
  */
 export default themeColors;

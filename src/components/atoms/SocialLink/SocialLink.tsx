@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "@atoms/Icon";
-import { themeColors } from "@utils/colors";
+import { themeColors, socialColors } from "@utils/colors";
 
 interface SocialLinkProps {
   platform: "instagram" | "whatsapp" | "linkedin" | "github";
@@ -40,7 +40,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({
       className="transition-colors duration-300"
       style={{ color: themeColors.text }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.color = themeColors.primary;
+        e.currentTarget.style.color = socialColors[platform];
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.color = themeColors.text;

@@ -75,3 +75,41 @@ h6 {
 .animate-pulse-dot {
   animation: pulse-dot 2s ease-in-out infinite;
 }
+
+/* Scrollbar personalizado basado en el diseño de la página */
+
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #adadad;
+  border-radius: 5px;
+  border: 2px solid #f4f4f4;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+::-webkit-scrollbar-corner {
+  background: #f4f4f4;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #adadad #f4f4f4;
+}
+
+*:hover {
+  scrollbar-color: #374151 #f4f4f4;
+}
