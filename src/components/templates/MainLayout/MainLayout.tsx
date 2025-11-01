@@ -1,4 +1,5 @@
 import React from "react";
+import { themeColors } from "@utils/colors";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -9,7 +10,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => (
     <main>{children}</main>
     <footer
       className="text-white py-6 md:py-8 px-4"
-      style={{ backgroundColor: "var(--secondary-color)" }}
+      style={{ backgroundColor: themeColors.secondary }}
     >
       <div className="container-custom text-center">
         <p className="text-gray-300 text-sm md:text-base">

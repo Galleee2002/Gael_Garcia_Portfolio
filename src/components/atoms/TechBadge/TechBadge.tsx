@@ -3,6 +3,7 @@ import React from "react";
 interface TechBadgeProps {
   technology: string;
   className?: string;
+  variant?: "default" | "experience";
 }
 
 type ColorConfig = {
@@ -239,8 +240,20 @@ const defaultColor = color(
 const TechBadge: React.FC<TechBadgeProps> = ({
   technology,
   className = "",
+  variant = "default",
 }) => {
   const colors = techColors[technology] || defaultColor;
+
+  // Si es variante de experiencia, usar fondo negro y texto blanco
+  if (variant === "experience") {
+    return (
+      <span
+        className={`px-3 py-1 text-xs md:text-sm rounded-full border transition-all duration-200 font-medium bg-black text-white border-black hover:bg-gray-900 hover:border-gray-900 ${className}`}
+      >
+        {technology}
+      </span>
+    );
+  }
 
   return (
     <span

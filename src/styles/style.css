@@ -15,12 +15,6 @@
 
 :root {
   color-scheme: light;
-  --primary-color: #374151;
-  --secondary-color: #1d1d1d;
-  --background-color: #f4f4f4;
-  --background-menu: #e5e5e5;
-  --text-color: #000000;
-  --secondary-text-color: #adadad;
 }
 
 *,
@@ -43,8 +37,6 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background-color);
-  color: var(--text-color);
 }
 
 h1,

@@ -5,6 +5,7 @@ import SocialLink from "@atoms/SocialLink";
 import Text from "@atoms/Text";
 import TextType from "@atoms/TextType";
 import { scrollToElement } from "@utils/navigation";
+import { themeColors } from "@utils/colors";
 
 interface SidebarProps {
   avatarSrc?: string;
@@ -138,7 +139,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         className={`fixed left-0 top-0 h-screen w-72 sm:w-80 flex flex-col z-40 transition-transform duration-300 shadow-lg ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 ${className}`}
-        style={{ backgroundColor: "#e5e5e5" }}
+        style={{ backgroundColor: themeColors.backgroundMenu }}
       >
         {/* Avatar Section */}
         <div className="flex flex-col items-center gap-1.5 pt-4 pb-3 px-4 md:gap-2 lg:gap-3 lg:pt-6 lg:pb-5 flex-shrink-0">
@@ -177,7 +178,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           <div className="mb-1.5 md:mb-2">
             <Text
               variant="h6"
-              color="var(--secondary-color)"
+              color={themeColors.secondary}
               className="font-medium text-xs uppercase tracking-wider"
             >
               Conectar

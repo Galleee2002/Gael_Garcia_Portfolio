@@ -3,6 +3,7 @@ import LogoLoop from "@organisms/LogoLoop";
 import SectionHeader from "@molecules/SectionHeader";
 import useScrollReveal from "@hooks/useScrollReveal";
 import { techLogos } from "@data/technologies";
+import { themeColors } from "@utils/colors";
 
 interface SkillsSectionProps {
   id?: string;
@@ -17,7 +18,7 @@ const logoLoopProps = {
   pauseOnHover: true,
   scaleOnHover: true,
   fadeOut: true,
-  fadeOutColor: "#ffffff",
+  fadeOutColor: themeColors.background,
 };
 
 const logoRowStyle = {

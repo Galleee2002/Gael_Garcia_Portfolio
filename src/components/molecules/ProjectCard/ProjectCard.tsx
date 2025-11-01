@@ -34,17 +34,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <div ref={ref} className={className}>
       <Card hover className="flex flex-col h-full">
         {/* Título del proyecto */}
-        <Text variant="h3" className="mb-4">
+        <Text variant="h3" className="mb-4 text-center">
           {title}
         </Text>
 
         {/* Imagen preview del proyecto */}
         {imageUrl && (
-          <div className="mb-4 -mx-6 overflow-hidden">
+          <div className="mb-4 -mx-6 overflow-hidden flex items-center justify-center bg-gray-100 h-48">
             <img
               src={imageUrl}
               alt={`Preview de ${title}`}
-              className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+              className="max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-105"
             />
           </div>
         )}
@@ -59,7 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Tecnologías utilizadas */}
         <div className="mb-4 flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
-            <TechBadge key={index} technology={tech} />
+            <TechBadge key={index} technology={tech} variant="experience" />
           ))}
         </div>
 

@@ -6,7 +6,7 @@ import portfolioImage from "../assets/images/portfolio-project.png";
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "E-Commerce",
     description:
       "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago y panel de administración.",
     technologies: ["React", "TypeScript", "NextJS", "Supabase"],

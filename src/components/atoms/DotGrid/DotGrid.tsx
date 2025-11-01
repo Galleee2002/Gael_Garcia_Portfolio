@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useCallback, useMemo } from "react";
 import { gsap } from "gsap";
+import { themeColors } from "@utils/colors";
 
 const throttle = (func: (...args: any[]) => void, limit: number) => {
   let lastCall = 0;
@@ -49,8 +50,8 @@ function hexToRgb(hex: string) {
 const DotGrid: React.FC<DotGridProps> = ({
   dotSize = 16,
   gap = 32,
-  baseColor = "#5227FF",
-  activeColor = "#5227FF",
+  baseColor = themeColors.textSecondary,
+  activeColor = themeColors.primary,
   proximity = 150,
   speedTrigger = 100,
   shockRadius = 250,

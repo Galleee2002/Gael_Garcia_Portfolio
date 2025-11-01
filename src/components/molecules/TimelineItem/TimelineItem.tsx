@@ -91,7 +91,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         {experience.technologies && experience.technologies.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {experience.technologies.map((tech, index) => (
-              <TechBadge key={index} technology={tech} />
+              <TechBadge key={index} technology={tech} variant="experience" />
             ))}
           </div>
         )}

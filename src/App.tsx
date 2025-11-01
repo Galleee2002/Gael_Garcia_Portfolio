@@ -6,6 +6,7 @@ import MenuIcon from "@atoms/MenuIcon";
 import perfilImage from "@assets/images/perfil.webp";
 import { useWindowSize } from "@hooks/useWindowSize";
 import useSwipeGesture from "@hooks/useSwipeGesture";
+import { themeColors } from "@utils/colors";
 
 const App: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -33,8 +34,8 @@ const App: React.FC = () => {
         <DotGrid
           dotSize={10}
           gap={15}
-          baseColor="#d1d5db"
-          activeColor="#374151"
+          baseColor={themeColors.textSecondary}
+          activeColor={themeColors.primary}
           proximity={120}
           shockRadius={250}
           shockStrength={5}

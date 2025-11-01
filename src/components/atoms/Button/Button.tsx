@@ -1,4 +1,5 @@
 import React from "react";
+import { themeColors } from "@utils/colors";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -14,7 +15,7 @@ const baseStyles =
   "font-normal rounded-lg transition-all duration-200 focus:outline-none hover:shadow-md hover:scale-[1.02] active:scale-[0.98]";
 const variantStyles = {
   primary: "text-white",
-  secondary: "bg-[var(--background-color)] text-black",
+  secondary: "text-black",
   outline: "border border-gray-300 text-gray-700 hover:bg-gray-50",
 };
 const sizeStyles = {
@@ -34,7 +35,10 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const getBackgroundStyle = () => {
     if (variant === "primary") {
-      return { backgroundColor: "#2a64f5" };
+      return { backgroundColor: themeColors.primary };
+    }
+    if (variant === "secondary") {
+      return { backgroundColor: themeColors.background };
     }
     return {};
   };

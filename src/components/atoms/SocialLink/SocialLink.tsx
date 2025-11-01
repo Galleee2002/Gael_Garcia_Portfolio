@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "@atoms/Icon";
+import { themeColors } from "@utils/colors";
 
 interface SocialLinkProps {
   platform: "instagram" | "whatsapp" | "linkedin" | "github";
@@ -7,13 +8,6 @@ interface SocialLinkProps {
   href?: string;
   className?: string;
 }
-
-const platformColors = {
-  instagram: "#E4405F",
-  whatsapp: "#25D366",
-  linkedin: "#0A66C2",
-  github: "#000000",
-};
 
 const SocialLink: React.FC<SocialLinkProps> = ({
   platform,
@@ -28,19 +22,28 @@ const SocialLink: React.FC<SocialLinkProps> = ({
     className={`group flex items-center justify-between px-3 py-1.5 md:py-2 text-sm rounded-md ${className}`}
   >
     <span
-      className="font-normal relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-[#2a64f5] after:transition-all after:duration-300 hover:after:w-full"
-      style={{ color: "#2a64f5" }}
+      className="font-normal relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:transition-all after:duration-300 hover:after:w-full"
+      style={{
+        color: themeColors.primary,
+        "--after-bg-color": themeColors.primary,
+      } as React.CSSProperties & { "--after-bg-color"?: string }}
+      data-after-color={themeColors.primary}
     >
+      <style>{`
+        span[data-after-color="${themeColors.primary}"]::after {
+          background-color: ${themeColors.primary};
+        }
+      `}</style>
       {label}
     </span>
     <span
       className="transition-colors duration-300"
-      style={{ color: "#000000" }}
+      style={{ color: themeColors.text }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.color = platformColors[platform];
+        e.currentTarget.style.color = themeColors.primary;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.color = "#000000";
+        e.currentTarget.style.color = themeColors.text;
       }}
     >
       <Icon name={platform} size="md" color="currentColor" />
