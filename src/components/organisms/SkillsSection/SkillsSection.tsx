@@ -17,7 +17,7 @@ const logoLoopProps = {
   gap: 56,
   pauseOnHover: true,
   scaleOnHover: true,
-  fadeOut: true,
+  fadeOut: false,
   fadeOutColor: themeColors.background,
 };
 
