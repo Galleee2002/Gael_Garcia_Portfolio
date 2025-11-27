@@ -47,11 +47,11 @@ const Hero: React.FC<HeroProps> = ({
           >
             {title}
           </h1>
-          <div className="bg-gradient-to-br from-white/8 via-white/4 to-transparent backdrop-blur-md border border-white/5 rounded-lg p-4 md:p-6 shadow-sm shadow-black/5">
+          <div className="bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md rounded-2xl p-6 md:p-8">
             <div ref={subtitleReveal.ref} className={subtitleReveal.className}>
               <Text
                 variant="h2"
-                color="text-gray-500"
+                color="text-gray-700"
                 className="text-2xl sm:text-3xl md:text-4xl"
               >
                 {subtitle}
@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({
               ref={descriptionReveal.ref}
               className={`${descriptionReveal.className} mt-3 md:mt-4`}
             >
-              <Text variant="p" className="text-sm sm:text-base text-gray-600">
+              <Text variant="p" className="text-sm sm:text-base text-gray-700">
                 {description}
               </Text>
             </div>
