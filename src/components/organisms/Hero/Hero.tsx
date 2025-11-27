@@ -47,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({
           >
             {title}
           </h1>
-          <div className="bg-white/5 backdrop-blur-[2px] rounded-lg p-4 md:p-6">
+          <div className="bg-gradient-to-br from-white/8 via-white/4 to-transparent backdrop-blur-md border border-white/5 rounded-lg p-4 md:p-6 shadow-sm shadow-black/5">
             <div ref={subtitleReveal.ref} className={subtitleReveal.className}>
               <Text
                 variant="h2"

@@ -2,6 +2,7 @@ import type { Project } from "../types/common.types";
 import ecommerceImage from "../assets/images/ecommerce-project.png";
 import calculadoraImage from "../assets/images/project_calculadora.png";
 import portfolioImage from "../assets/images/portfolio-project.png";
+import landingpage from "../assets/images/landing.png";
 
 export const projects: Project[] = [
   {
@@ -34,5 +35,15 @@ export const projects: Project[] = [
     imageUrl: portfolioImage,
     demoUrl: "https://gael-garcia-portfolio.vercel.app/",
     githubUrl: "https://github.com/Galleee2002/Gael_Garcia_Portfolio.git",
+  },
+  {
+    id: 4,
+    title: "Landing Page",
+    description:
+      "Landing Page responsive para una agencia IT utilizando Next.js, React, TypeScript, Tailwind CSS y componentes de Shadcn/UI.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "NextJS", "Shadcn"],
+    imageUrl: landingpage,
+    demoUrl: "https://landing-page-it-nu.vercel.app/",
+    githubUrl: "https://github.com/Galleee2002/Landing_page_IT.git",
   },
 ];
